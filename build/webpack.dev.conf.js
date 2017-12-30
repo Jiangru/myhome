@@ -12,8 +12,8 @@ config.plugins = [
     new webpack.NoErrorsPlugin(),
 
     new HtmlWebpackPlugin({
-        filename: 'app/index/index.html',
-        template: path.resolve(__dirname, '../app/index/index.html'),
+        filename: 'index.html',
+        template: path.resolve(__dirname, '../index.html'),
         inject: true
     })
 ]

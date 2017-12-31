@@ -2,6 +2,7 @@
 var express = require('express')
 var webpack = require('webpack')
 var config = require('./webpack.dev.conf')
+var opn = require('opn')
 
 // 创建一个express实力
 var app = express()
@@ -35,11 +36,33 @@ app.use(devMiddleware)
 // 注册中间件
 app.use(hotMiddleware)
 
+var uri = 'http://localhost:8888/index.html'
+
+var _resolve
+var readyPromise = new Promise(resolve => {
+    _resolve = resolve
+})
+
+devMiddleware.waitUntilValid(() => {
+    console.log(process.env.NODE_ENV)
+    if (process.env.NODE_ENV !== 'testing') {
+        opn(uri)
+    }
+    _resolve
+})
+
 // 监听8888端口，开启服务器
-app.listen(8888, function (err) {
+var server = app.listen(8888, function (err) {
     if (err) {
         console.log(err)
         return
     }
     console.log('Listening at http://localhost:8888')
 })
+
+module.exports = {
+    ready: readyPromise,
+    close: () => {
+        server.close()
+    }
+}

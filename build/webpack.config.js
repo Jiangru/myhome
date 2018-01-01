@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var cleanWebpackPlugin = require('clean-webpack-plugin')
 
 function resolve (dir) {
+    console.log(__dirname, dir, 111)
     return path.join(__dirname, '..', dir)
 }
 
@@ -14,7 +15,7 @@ module.exports = {
     },
     // 输出配置
     output: {
-        // 输出路径是myProject/dist/static
+        // 输出路径是myProject/dist
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/',
         filename: '[name].[hash].js'
@@ -43,20 +44,20 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'file-loader',
+                loader: 'url-loader',
                 options: {
+                    limit: 10000,
                     name: '[path][name].[ext]',
-                    publicPath: 'assets/',
-                    outputPath: 'fonts' 
+                    publicPath: '/'
                 }
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'file-loader',
+                loader: 'url-loader',
                 options: {
+                    limit: 10000,
                     name: '[path][name].[ext]',
-                    publicPath: 'assets/',
-                    outputPath: 'fonts' 
+                    publicPath: '/'
                 }
             }
         ]

@@ -1,6 +1,7 @@
 // nodejs 中的path模块
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var cleanWebpackPlugin = require('clean-webpack-plugin')
 
 function resolve (dir) {
     return path.join(__dirname, '..', dir)
@@ -61,6 +62,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new cleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: '哈哈哈',
             filename: './index.html',

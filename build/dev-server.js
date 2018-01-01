@@ -4,7 +4,7 @@ var webpack = require('webpack')
 var config = require('./webpack.dev.conf')
 var opn = require('opn')
 
-// 创建一个express实力
+// 创建一个express实例
 var app = express()
 
 // 调用webpack并把配置传递过去

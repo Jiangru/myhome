@@ -36,10 +36,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/ // 排除node_modules文件夹
             },
             {
                 test: /\.less$/,
+                // 多个loader可以用在同一个文件上并且被链式调用，链式调用时从右到左执行且loader之间用"!"来分割
                 loader: 'style-loader!css-loader!less-loader'
             },
             {

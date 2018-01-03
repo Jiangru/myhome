@@ -2,6 +2,7 @@
 var express = require('express')
 var webpack = require('webpack')
 var config = require('./webpack.dev.conf')
+// 跨平台的开启文件或者网页的工具
 var opn = require('opn')
 
 // 创建一个express实例

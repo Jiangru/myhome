@@ -18,7 +18,7 @@ module.exports = {
     output: {
         // 输出路径是myProject/dist
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/',
+        publicPath: '/assets/',
         filename: '[name].[hash].js',
         chunkFilename: '[name].chunk.js'
     },
@@ -50,7 +50,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: '[path][name].[ext]',
+                    name: 'src/imgs/[name].[ext]',
                     publicPath: '/'
                 }
             },
@@ -59,7 +59,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: '[path][name].[ext]',
+                    name: 'src/fonts/[name].[ext]',
                     publicPath: '/'
                 }
             }

@@ -1,8 +1,8 @@
 <template lang="pug">
     .welcome
-        .welcome-title Welcome to My Home!
-        //- .img
-        //-     img(src="../../assets/imgs/treeload.jpg")
+        .welcome-title
+            i.fa.fa-anchor
+            p Welcome to My Home!
 </template>
 
 <script>

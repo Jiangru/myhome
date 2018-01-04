@@ -18,7 +18,7 @@ module.exports = {
     output: {
         // 输出路径是myProject/dist
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/assets/',
+        publicPath: '/',
         filename: '[name].[hash].js',
         chunkFilename: '[name].chunk.js'
     },

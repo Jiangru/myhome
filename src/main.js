@@ -1,5 +1,7 @@
 import Vue from 'Vue'
 import App from './app.vue'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css' // 使用css
 
 import '@/assets/css/main.less'
 require("font-awesome-webpack");

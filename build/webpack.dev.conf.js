@@ -9,7 +9,7 @@ config.output.publicPath  = '/'
 config.plugins = [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
 
     new HtmlWebpackPlugin({
         title: 'app',

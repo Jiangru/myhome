@@ -6,11 +6,23 @@
             .content-wrap
                 i-row(:gutter="10")
                     i-col(span="8")
-                        .modular 1
+                        .modular
+                            .menu-item
+                                i.fa.fa-share-alt-square
+                        .menu-title
+                            | 分享
                     i-col(span="8")
-                        .modular 2
+                        .modular
+                            .menu-item
+                                i.fa.fa-fire
+                        .menu-title
+                            | 博客
                     i-col(span="8")
-                        .modular 3
+                        .modular
+                            .menu-item
+                                i.fa.fa-camera-retro
+                        .menu-title
+                            | 生活
 </template>
 
 <script>

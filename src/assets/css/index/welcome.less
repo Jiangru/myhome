@@ -5,29 +5,36 @@ body {
     background-size: cover;
 }
 .welcome {
+    position: relative;
+    color: #e1e1e1;
+    overflow: hidden;
     .container {
         position: relative;
         text-align: center;
         width: 1200px;
         min-width: 800px;
         margin: 0 auto;
-        border: 1px solid #e1e1e1;
+        padding-top: 16%;
+        .big-icon {
+            font-size: 48px;
+        }
+        .content-title {
+            font-size: 48px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        // border: 1px solid #e1e1e1;
         .content-wrap {
-            position: absolute;
-            width: 80%;
-            height: 200px;
-            line-height: 100px;
-            text-align: center;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 70%;
+            margin: 0 auto;
             .modular {
-                width: 100%;
+                width: 80%;
                 height: 100px;
                 line-height: 100px;
                 border-radius: 4px;
                 background: #6699CC;
                 box-shadow: 3px 7px 2px #111111;
+                margin: 0 auto;
                 margin-bottom: 26px;
                 cursor: pointer;
                 &:hover {
@@ -39,21 +46,59 @@ body {
                 }
             }
             .menu-title {
-                color: rgb(175, 174, 174); 
-                width: 60%;
+                position: relative;
+                color: #0099fb;
+                width: 30%;
                 height: 40px;
                 line-height: 40px;
                 margin: 0 auto;
-                border-bottom: 1px solid rgb(175, 174, 174); 
                 cursor: pointer;
+                transition: color 0.2s;
+                -webkit-transition: color 0.2s;
                 &:hover {
-                    transform: translateY(2px);
-                    text-shadow: 15px 2px 1px #111111;
+                    color: #e1e1e1;
+                    .up-line {
+                        animation: upLine 0.5s ease-out forwards alternate;
+                        -webkit-animation: upLine 0.5s ease-out forwards alternate;
+                    }
+                    .down-line {
+                        animation: downLine 0.5s ease-out forwards;
+                        -webkit-animation: downLine 0.5s ease-out forwards;
+                    }
+                }
+                .up-line, .down-line {
+                    position: absolute;
+                    height: 3px;
+                    width: 100px;
+                    background: rgba(225, 225, 225, 0);
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                .up-line {
+                    top: -20px;
+                }
+                .down-line {
+                    bottom: 20px;
+                }
+                @keyframes upLine {
+                    from {top: -20px; background: rgba(225, 225, 225, 0);}
+                    to {top: 0; background: rgba(225, 225, 225, 1);}
+                }
+                @-webkit-keyframes upLine {
+                    from {top: -20px; background: rgba(225, 225, 225, 0);}
+                    to {top: 0; background: rgba(225, 225, 225, 1);}
+                }
+                @keyframes downLine {
+                    from {bottom: -20px; background: rgba(225, 225, 225, 0);}
+                    to {bottom: 0; background: rgba(225, 225, 225, 1);}
+                }
+                @-webkit-keyframes downLine {
+                    from {bottom: -20px; background: rgba(225, 225, 225, 0);}
+                    to {bottom: 0; background: rgba(225, 225, 225, 1);}
                 }
             }
         }
     }
-    color: #e1e1e1;
     .welcome-title {
         font-size: 48px;
         text-align: center;
@@ -61,5 +106,30 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+    /* 光束 */
+    .gradient-line {
+        width: 100px;
+        height: 1000px;
+        position: absolute;
+        z-index: 100;
+        background: -moz-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.2)50%, rgba(255,255,255,0)100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,.2)), color-stop(100%, rgba(255,255,255,0)));
+        background: -webkit-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.2)50%, rgba(255,255,255,0)100%);
+        background: -o-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.2)50%, rgba(255,255,255,0)100%);
+        -webkit-transform: skewX(45deg);
+        -moz-transform: skewX(45deg);
+        animation: myMove 5s infinite;
+        -moz-animation: myMove 5s infinite;	/* Firefox */
+        -webkit-animation: myMove 5s infinite;	/* Safari 和 Chrome */
+        -o-animation: myMove 5s infinite;	/* Opera */
+    }
+    @keyframes myMove {
+        from {left: -100px;}
+        to {left: 130%;}
+    }
+    @-webkit-keyframes myMove {
+        from {left: -100px;}
+        to {left: 130%;}
     }
 }

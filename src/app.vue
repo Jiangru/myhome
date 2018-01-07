@@ -1,14 +1,14 @@
 <template lang="pug">
     .app
-        welcome
+        transition
+            router-view
 </template>
 
 <script>
-import welcome from '@/views/index/welcome'
 export default {
     name: 'app',
     components: {
-        welcome
+        
     }
 }
 </script>

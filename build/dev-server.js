@@ -32,12 +32,13 @@ compiler.plugin('compilation', (compilation) => {
     })
 })
 
+
 // 注册中间件
 app.use(devMiddleware)
 // 注册中间件
 app.use(hotMiddleware)
 
-var uri = 'http://localhost:8888/index.html'
+var uri = 'http://localhost:8888/'
 
 var _resolve
 var readyPromise = new Promise(resolve => {

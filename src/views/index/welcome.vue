@@ -1,28 +1,35 @@
 <template lang="pug">
     .welcome
+        .gradient-line
         .container(:style="{'height': `${tHeight}px`}")
-            i.fa.fa-anchor
-            p Welcome to My Home!
             .content-wrap
+                i.fa.fa-anchor.big-icon
+                .content-title Welcome to My Home!
                 i-row(:gutter="10")
                     i-col(span="8")
                         .modular
                             .menu-item
                                 i.fa.fa-share-alt-square
-                        .menu-title
+                        .menu-title(@click="handleClick")
                             | 分享
+                            .up-line
+                            .down-line
                     i-col(span="8")
                         .modular
                             .menu-item
                                 i.fa.fa-fire
                         .menu-title
                             | 博客
+                            .up-line
+                            .down-line
                     i-col(span="8")
                         .modular
                             .menu-item
                                 i.fa.fa-camera-retro
                         .menu-title
                             | 生活
+                            .up-line
+                            .down-line
 </template>
 
 <script>
@@ -41,13 +48,20 @@ export default {
         }
     },
     methods: {
+        handleClick () {
+            console.log(this.$router)
+            let router = this.$router
+            router.push({
+                path: '/blog'
+            })
+        },
         calculateHeight () {
             let $body = document.body
             let $html = document.documentElement
 
             // IE下document.documentElement.clientHeight === 0
             this.tHeight = $html.clientHeight || $body.clientHeight
-            console.log(this.tHeight)
+            // console.log(this.tHeight)
         }
     },
     created () {

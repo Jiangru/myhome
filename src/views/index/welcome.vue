@@ -10,7 +10,7 @@
                         .modular
                             .menu-item
                                 i.fa.fa-share-alt-square
-                        .menu-title(@click="handleClick")
+                        .menu-title
                             | 分享
                             .up-line
                             .down-line
@@ -18,7 +18,7 @@
                         .modular
                             .menu-item
                                 i.fa.fa-fire
-                        .menu-title
+                        .menu-title(@click="handleClick('/blog')")
                             | 博客
                             .up-line
                             .down-line
@@ -48,11 +48,11 @@ export default {
         }
     },
     methods: {
-        handleClick () {
+        handleClick (gopath) {
             console.log(this.$router)
             let router = this.$router
             router.push({
-                path: '/blog'
+                path: gopath
             })
         },
         calculateHeight () {

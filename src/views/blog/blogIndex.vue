@@ -3,9 +3,19 @@
         .left-content
             j-menu(
                 :menuTitle="listData.menuTitle"
+                :menuContent="listData.menuContent"
+                @click-li="clickLi")
+            j-menu(
+                :menuTitle="listData.menuTitle"
+                :menuContent="listData.menuContent")
+            j-menu(
+                :menuTitle="listData.menuTitle"
+                :menuContent="listData.menuContent")
+            j-menu(
+                :menuTitle="listData.menuTitle"
                 :menuContent="listData.menuContent")
         .right-content
-            | right
+            router-view
 </template>
 <script>
 import iRow from 'iview/src/components/layout/row.vue'
@@ -22,16 +32,24 @@ export default {
                 menuTitle: '随笔',
                 menuContent: [
                     {
-                        label: '前端开发的未来'
+                        label: '前端开发的未来',
+                        route: '/test'
                     },
                     {
-                        label: '我的宝宝即将到来'
+                        label: '我的宝宝即将到来',
+                        route: '/test'
                     },
                     {
-                        label: 'JavaScript原型链'
+                        label: 'JavaScript原型链',
+                        route: '/test'
                     }
                 ]
             }
+        }
+    },
+    methods: {
+        clickLi (val) {
+            console.log(val, this.$route)
         }
     }
 }

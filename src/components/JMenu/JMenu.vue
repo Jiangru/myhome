@@ -3,7 +3,7 @@
         .menu-head
             | {{menuTitle}}
         .menu-list
-            .menu-li(v-for="item in menuContent") {{item.label}}
+            .menu-li(v-for="item in menuContent" @click="clickLi(item.route)") {{item.label}}
 </template>
 <script>
 export default {
@@ -20,6 +20,11 @@ export default {
             default () {
                 return []
             }
+        }
+    },
+    methods: {
+        clickLi (route) {
+            this.$emit('click-li', route)
         }
     }
 }

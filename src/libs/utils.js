@@ -27,4 +27,12 @@ const _ = {
     }
 }
 
+export const oneOf = function (value, list) {
+    if (list.indexOf(value) > -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
 export default _

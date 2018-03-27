@@ -1,14 +1,14 @@
 <template lang="pug">
-    .app
-        transition
-            router-view
+  .app
+    transition
+      router-view
 </template>
 
 <script>
 export default {
-    name: 'app',
-    components: {
-        
-    }
+  name: 'app',
+  components: {
+
+  }
 }
 </script>

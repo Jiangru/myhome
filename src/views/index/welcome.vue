@@ -1,35 +1,35 @@
 <template lang="pug">
-    .welcome
-        .gradient-line
-        .container(:style="{'height': `${tHeight}px`}")
-            .content-wrap
-                i.fa.fa-anchor.big-icon
-                .content-title Welcome to My Home!
-                i-row(:gutter="10")
-                    i-col(span="8")
-                        .modular
-                            .menu-item
-                                i.fa.fa-share-alt-square
-                        .menu-title
-                            | 分享
-                            .up-line
-                            .down-line
-                    i-col(span="8")
-                        .modular
-                            .menu-item
-                                i.fa.fa-fire
-                        .menu-title(@click="handleClick('/blog')")
-                            | 博客
-                            .up-line
-                            .down-line
-                    i-col(span="8")
-                        .modular
-                            .menu-item
-                                i.fa.fa-camera-retro
-                        .menu-title
-                            | 生活
-                            .up-line
-                            .down-line
+  .welcome
+    .gradient-line
+    .container(:style="{'height': `${tHeight}px`}")
+      .content-wrap
+        i.fa.fa-anchor.big-icon
+        .content-title Welcome to My Home!
+        i-row(:gutter="10")
+          i-col(span="8")
+            .modular
+              .menu-item
+                  i.fa.fa-share-alt-square
+            .menu-title
+              | 分享
+              .up-line
+              .down-line
+          i-col(span="8")
+            .modular
+              .menu-item
+                  i.fa.fa-fire
+            .menu-title(@click="handleClick('/blog')")
+              | 博客
+              .up-line
+              .down-line
+          i-col(span="8")
+            .modular
+              .menu-item
+                  i.fa.fa-camera-retro
+            .menu-title
+              | 生活
+              .up-line
+              .down-line
 </template>
 
 <script>

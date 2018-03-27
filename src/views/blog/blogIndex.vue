@@ -15,7 +15,8 @@
                 :menuTitle="listData.menuTitle"
                 :menuContent="listData.menuContent")
         .right-content
-            router-view
+            .article
+                | afasffadfa
 </template>
 <script>
 import iRow from 'iview/src/components/layout/row.vue'
@@ -49,7 +50,8 @@ export default {
     },
     methods: {
         clickLi (val) {
-            console.log(val, this.$route)
+            console.log(val, this.$router)
+            // this.$router.push(val)
         }
     }
 }

@@ -33,10 +33,10 @@
       i-row
         i-col(span="6")
           j-child
-            template(slot-scope="nameArr")
+            template(slot-scope="{data}")
               ul
-                li(v-for="item in nameArr") {{ item }}
-
+                li(:is="JlistItem")
+                //- j-list-item(v-for="item in data" :liData="item")
 </template>
 <script>
 import iRow from 'iview/src/components/layout/row.vue'
@@ -44,10 +44,11 @@ import iCol from 'iview/src/components/layout/col.vue'
 import JMenu from '@/components/JMenu'
 import JInput from '@/components/input'
 import JChild from '@/components/child'
+import JlistItem from '@/components/listItem'
 export default {
     name: 'blog',
     components: {
-        iRow, iCol, JMenu, JInput, JChild
+        iRow, iCol, JMenu, JInput, JChild, JlistItem
     },
     data () {
       return {

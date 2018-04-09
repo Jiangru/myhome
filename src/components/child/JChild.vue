@@ -1,7 +1,7 @@
 <template lang="pug">
   .child
     h3 这里是子组件
-      slot(:data="nameArr")
+    slot(:data="nameArr")
 </template>
 <script>
 export default {

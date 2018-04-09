@@ -35,7 +35,7 @@
           j-child
             template(slot-scope="{data}")
               ul
-                li(:is="JlistItem")
+                li(is="JlistItem" liData="jsjsj")
                 //- j-list-item(v-for="item in data" :liData="item")
 </template>
 <script>

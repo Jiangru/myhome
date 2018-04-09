@@ -19,6 +19,11 @@ const router = new VueRouter({
 })
 
 Vue.config.debug = true // 开启错误提示
+
+Vue.filter('overallFilter', function (value) {
+  return `${value}全局过滤器`
+})
+
 new Vue({
     el: '#app',
     router,

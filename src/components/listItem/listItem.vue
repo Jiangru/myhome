@@ -1,6 +1,6 @@
 <template lang="pug">
   .list-li
-    .li-item {{ liData }}
+    .li-item {{ liData | overallFilter }}
 </template>
 <script>
 export default {
@@ -14,6 +14,12 @@ export default {
     liData: {
       type: String,
       default: ''
+    }
+  },
+  filters: {
+    toupperCase (value) {
+      console.log(value)
+      return value.toUpperCase()
     }
   }
 }

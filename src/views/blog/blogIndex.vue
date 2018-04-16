@@ -1,81 +1,123 @@
-<template lang="pug">
-  .blog
-    .left-content
-      j-menu(
-        :menuTitle="listData.menuTitle"
-        :menuContent="listData.menuContent"
-        @click-li="clickLi")
-      j-menu(
-        :menuTitle="listData.menuTitle"
-        :menuContent="listData.menuContent")
-      j-menu(
-        :menuTitle="listData.menuTitle"
-        :menuContent="listData.menuContent")
-      j-menu(
-        :menuTitle="listData.menuTitle"
-        :menuContent="listData.menuContent")
-    .right-content
-      i-row
-        i-col(span="6")
-          j-input(
-            size="large"
-            placeholder="large size"
-          )
-        i-col(span="6")
-          j-input(
-            placeholder="normal size"
-          )
-        i-col(span="6")
-          j-input(
-            size="small"
-            placeholder="small size"
-          )
-      i-row
-        i-col(span="6")
-          j-child
-            template(slot-scope="{data}")
-              ul
-                li(is="JlistItem" liData="jsjsj")
-                //- j-list-item(v-for="item in data" :liData="item")
+<template>
+  <div>
+    <ul>
+      <li v-for="item in list1">{{item}}</li>
+    </ul>
+    <ul>
+      <li v-for="item in list2">{{item}}</li>
+    </ul>
+    <ol>
+      <li v-for="item in list3">{{item}}</li>
+    </ol>
+    <ol>
+      <li v-for="item in list4">{{item}}</li>
+    </ol>
+    <ol>
+      <li v-for="item in list5">{{item}}</li>
+    </ol>
+  </div>
 </template>
-<script>
-import iRow from 'iview/src/components/layout/row.vue'
-import iCol from 'iview/src/components/layout/col.vue'
-import JMenu from '@/components/JMenu'
-import JInput from '@/components/input'
-import JChild from '@/components/child'
-import JlistItem from '@/components/listItem'
+<script type="text/javascript">
 export default {
-    name: 'blog',
-    components: {
-        iRow, iCol, JMenu, JInput, JChild, JlistItem
-    },
-    data () {
-      return {
-        listData: {
-          menuTitle: '随笔',
-          menuContent: [
-            {
-              label: '前端开发的未来',
-              route: '/test'
-            },
-            {
-              label: '我的宝宝即将到来',
-              route: '/test'
-            },
-            {
-              label: 'JavaScript原型链',
-              route: '/test'
-            }
-          ]
-        }
-      }
-    },
-    methods: {
-      clickLi (val) {
-        console.log(val, this.$route)
-      }
+  data() {
+    return {
+      list1: [],
+      list2: [],
+      list3: [],
+      list4: [],
+      list5: []
     }
+  },
+  created() {
+    this.composeList12()
+    this.composeList34()
+    this.composeList5()
+    this.$nextTick(function() {
+      // DOM 更新了
+      console.log('finished test ' + new Date().toString())
+      console.log(document.querySelectorAll('li').length)
+    })
+  },
+  methods: {
+    composeList12() {
+      let count = 10000
+
+      for (let i = 0; i < count; i++) {
+        this.list1.push(`I am a 测试信息～～啦啦啦${i}`)
+      }
+      console.log('finished list1 ' + new Date().toString())
+      console.log(document.querySelectorAll('li').length)
+
+      for (let i = 0; i < count; i++) {
+        this.list2.push(`I am a 测试信息～～啦啦啦${i}`)
+      }
+      console.log('finished list2 ' + new Date().toString())
+      console.log(document.querySelectorAll('li').length)
+
+      this.$nextTick(function() {
+        // DOM 更新了
+        console.log('finished tick1&2 ' + new Date().toString())
+        console.log(document.querySelectorAll('li').length)
+      })
+    },
+    composeList34() {
+      let count = 10000
+
+      for (let i = 0; i < count; i++) {
+        this.list3.push(`I am a 测试信息～～啦啦啦${i}`)
+      }
+      console.log('finished list3 ' + new Date().toString())
+      console.log(document.querySelectorAll('li').length)
+
+      this.$nextTick(function() {
+        // DOM 更新了
+        console.log('finished tick3 ' + new Date().toString())
+        console.log(document.querySelectorAll('li').length)
+      })
+
+      setTimeout(this.setTimeout1, 0)
+    },
+    setTimeout1() {
+      let count = 10000
+
+      for (let i = 0; i < count; i++) {
+        this.list4.push(`I am a 测试信息～～啦啦啦${i}`)
+      }
+      console.log('finished list4 ' + new Date().toString())
+      console.log(document.querySelectorAll('li').length)
+
+      this.$nextTick(function() {
+        // DOM 更新了
+        console.log('finished tick4 ' + new Date().toString())
+        console.log(document.querySelectorAll('li').length)
+      })
+    },
+    composeList5() {
+      let count = 10000
+
+      this.$nextTick(function() {
+        // DOM 更新了
+        console.log('finished tick5-1 ' + new Date().toString())
+        console.log(document.querySelectorAll('li').length)
+      })
+
+      setTimeout(this.setTimeout2, 0)
+    },
+    setTimeout2() {
+      let count = 10000
+
+      for (let i = 0; i < count; i++) {
+        this.list5.push(`I am a 测试信息～～啦啦啦${i}`)
+      }
+      console.log('finished list5 ' + new Date().toString())
+      console.log(document.querySelectorAll('li').length)
+
+      this.$nextTick(function() {
+        // DOM 更新了
+        console.log('finished tick5 ' + new Date().toString())
+        console.log(document.querySelectorAll('li').length)
+      })
+    }
+  }
 }
 </script>
-

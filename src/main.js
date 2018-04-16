@@ -12,7 +12,7 @@ require("font-awesome-webpack");
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-    mode: 'hash',
+    mode: 'history',
     base: __dirname,
     linkActiveClass: 'active',
     routes: routes

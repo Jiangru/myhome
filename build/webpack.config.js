@@ -4,7 +4,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var cleanWebpackPlugin = require('clean-webpack-plugin')
 
 function resolve (dir) {
-    console.log(__dirname, dir, 111)
     return path.join(__dirname, '..', dir)
 }
 

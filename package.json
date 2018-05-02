@@ -29,7 +29,7 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "opn": "^5.1.0",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^2.0.3",
     "pug-loader": "^2.3.0",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
@@ -37,7 +37,7 @@
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^13.6.1",
     "vue-style-loader": "^3.0.3",
-    "vue-template-compiler": "^2.5.13",
+    "vue-template-compiler": "^2.5.16",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.3",
     "webpack-dev-server": "^2.9.7",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "iview": "^1.0.2",
-    "vue": "^2.5.13",
+    "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   }
 }

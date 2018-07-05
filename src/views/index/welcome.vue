@@ -10,7 +10,7 @@
             .modular
               .menu-item
                   i.fa.fa-share-alt-square
-            .menu-title
+            .menu-title(@click="handleClick('/study-router')")
               | 分享
               .up-line
               .down-line
@@ -26,7 +26,7 @@
             .modular
               .menu-item
                   i.fa.fa-camera-retro
-            .menu-title
+            .menu-title(@click="handleClick()")
               | 生活
               .up-line
               .down-line
@@ -49,10 +49,30 @@ export default {
     },
     methods: {
         handleClick (gopath) {
-            console.log(this.$router)
+            // console.log(this.$router)
+            // console.log(this.$routes)
             let router = this.$router
+            // if (gopath === '/study-router') {
+            //   router.replace({
+            //     name: 'studyRouter',
+            //     params: {
+            //       id: 'jiangruyi'
+            //     },
+            //     query: {
+            //       user: 'admin'
+            //     }
+            //   }, function onComplete () {
+            //     alert(666)
+            //   }, function onAbort () {
+            //     alert(777)
+            //   })
+            // } else {
+            //   router.push({
+            //     path: gopath
+            //   })
+            // }
             router.push({
-                path: gopath
+              path: gopath
             })
         },
         calculateHeight () {

@@ -2,6 +2,11 @@
 const Welcome = r => require.ensure([], () => r(require('@/views/index/welcome')), 'Welcome')
 // 博客
 const Blog = r => require.ensure([], () => r(require('@/views/blog/blogIndex')), 'BlogIndex')
+// 学习路由
+const Router = r => require.ensure([], () => r(require('@/views/study/router')), 'Router')
+// 路由嵌套、子路由
+const ChildRoute = r => require.ensure([], () => r(require('@/views/study/routeChild')), 'ChildRoute')
+const ChildRouteOne = r => require.ensure([], () => r(require('@/views/study/routeChildOne')), 'ChildRouteOne')
 
 const routes = [
     {
@@ -14,7 +19,8 @@ const routes = [
         meta: {
             requiresAuth: true
         },
-        component: Welcome
+        component: Welcome,
+        alias: '/hahahah'
     },
     {
         path: '/blog',
@@ -23,6 +29,23 @@ const routes = [
           requiresAuth: true
         },
         component: Blog
+    },
+    {
+      path: '/study-router',
+      name: 'studyRouter',
+      meta: {
+        // requiresAuth: true
+      },
+      component: Router,
+      children: [
+        {
+          path: 'route',
+          components: {
+            default: ChildRoute,
+            one: ChildRouteOne
+          }
+        }
+      ]
     }
 ]
 

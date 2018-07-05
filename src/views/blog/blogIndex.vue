@@ -29,14 +29,14 @@ export default {
     }
   },
   created() {
-    this.composeList12()
-    this.composeList34()
-    this.composeList5()
-    this.$nextTick(function() {
-      // DOM 更新了
-      console.log('finished test ' + new Date().toString())
-      console.log(document.querySelectorAll('li').length)
-    })
+    // this.composeList12()
+    // this.composeList34()
+    // this.composeList5()
+    // this.$nextTick(function() {
+    //   // DOM 更新了
+    //   console.log('finished test ' + new Date().toString())
+    //   console.log(document.querySelectorAll('li').length)
+    // })
   },
   methods: {
     composeList12() {

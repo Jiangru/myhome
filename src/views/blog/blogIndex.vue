@@ -28,6 +28,11 @@ export default {
       list5: []
     }
   },
+  beforeRouteEnter (to, from, next) {
+    console.log(to)
+    to.meta.keepAlive = false
+    next()
+  },
   created() {
     // this.composeList12()
     // this.composeList34()

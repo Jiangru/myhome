@@ -1,6 +1,6 @@
 <template lang="pug">
-  .app
-    transition
+  #app
+    keep-alive(include="welcomeHtml")
       router-view
 </template>
 

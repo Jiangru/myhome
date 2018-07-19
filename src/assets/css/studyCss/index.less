@@ -1,0 +1,140 @@
+.css-index {
+  .list-wrap {
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 2px;
+    .list-item {
+      display: inline-block;
+      padding: 8px 14px;
+      background: green;
+      border-radius: 1px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+.css-animation {
+  .container {
+    position: relative;
+    background: #F5D6BB;
+    width: 80%;
+    height: 500px;
+    margin: 10px auto;
+    .ball {
+      position: absolute;
+      color: #fff;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      border-radius: 50%;
+      background: #3388ff;
+      &:nth-child(1) {
+        left: 80px;
+        top: 0;
+        animation: dropdown 4s linear 1.5s infinite;
+        animation-fill-mode: forwards;
+      }
+      &:nth-child(2) {
+        left: 280px;
+        background: #EE7955;
+        top: 0;
+        animation: dropdown 4s ease 1.5s infinite;
+        animation-fill-mode: forwards;
+      }
+      &:nth-child(3) {
+        left: 480px;
+        background: #EE7955;
+        top: 0;
+        animation: dropdown 4s ease-in 1.5s infinite;
+        animation-fill-mode: forwards;
+      }
+      &:nth-child(4) {
+        left: 680px;
+        background: #CCEE55;
+        top: 0;
+        animation: dropdown 4s ease-out 1.5s infinite;
+        animation-fill-mode: forwards;
+      }
+      &:nth-child(5) {
+        left: 880px;
+        background: #C655EE;
+        top: 0;
+        animation: dropdown 4s ease-in-out 1.5s infinite;
+        animation-fill-mode: forwards;
+      }
+    }
+    @keyframes dropdown {
+      0% {
+        top: 0;
+      }
+      80% {
+        top: 400px;
+      }
+      100% {
+        top: 400px;
+      }
+    }
+    .right-side {
+      position: absolute;
+      font-family: "Microsoft YaHei";
+      font-size: 20px;
+      color: #fff;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      .logo-title {
+        color: #000;
+        text-align: center;
+      }
+      .logo-list-wrap {
+        position: relative;
+        width: 320px;
+        height: 60px;
+        overflow: hidden;
+        background: #fff;
+        .logo-move-wrap {
+          position: absolute;
+          left: 10px;
+          animation: up 10s linear 0s infinite;
+          .logo-item {
+            width: 300px;
+            height: 60px;
+            line-height: 60px;
+            margin: 0 auto;
+            text-align: center;
+            &:nth-child(1) {
+              background: #3388ff;
+            }
+            &:nth-child(2) {
+              background: #C655EE;
+            }
+            &:nth-child(3) {
+              background: #EE7955;
+            }
+            &:nth-child(4) {
+              background: #CCEE55;
+            }
+            &:nth-child(5) {
+              background: #EE55C3;
+            }
+            &:nth-child(6) {
+              background: #C51E52;
+            }
+            &:nth-child(7) {
+              background: #3388ff;
+            }
+          }
+        }
+        @keyframes up {
+          0% {
+            top: -30px;
+          }
+          100% {
+            top: -330px;
+          }
+        }
+      }
+    }
+  }
+}

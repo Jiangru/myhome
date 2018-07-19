@@ -18,18 +18,19 @@
             .modular
               .menu-item
                   i.fa.fa-fire
-            .menu-title(@click="handleClick('/blog')")
-              | 博客
+            .menu-title(@click="handleClick('/study-vue')")
+              | vue
               .up-line
               .down-line
           i-col(span="8")
             .modular
               .menu-item
                   i.fa.fa-camera-retro
-            .menu-title(@click="handleClick()")
-              | 生活
+            .menu-title(@click="handleClick('/study-css')")
+              | CSS3
               .up-line
               .down-line
+        input(type="text")
 </template>
 
 <script>

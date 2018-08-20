@@ -3,6 +3,7 @@ const Welcome = r => require.ensure([], () => r(require('@/views/index/welcome')
 // studyVue
 const VueIndex = r => require.ensure([], () => r(require('@/views/studyVue/index')), 'VueIndex')
 const OnEmit = r => require.ensure([], () => r(require('@/views/studyVue/onEmit')), 'OnEmit')
+const SlotPage = r => require.ensure([], () => r(require('@/views/studyVue/slotPage')), 'SlotPage')
 // studyCss
 const RequestAnimationFrame = r => require.ensure([], () => r(require('@/views/studyCss/requestAnimationFrame')), 'RequestAnimationFrame')
 // css-index
@@ -44,6 +45,14 @@ const routes = [
               requiresAuth: true
             },
             component: OnEmit
+          },
+          {
+            path: 'slot-page',
+            name: 'slotpage',
+            meta: {
+              requiresAuth: true
+            },
+            component: SlotPage
           }
         ]
     },
